@@ -21,10 +21,8 @@ jobs:
     - name: Install Dependencies
       run: npm install --legacy-peer-deps
 
-    - name: Build and Export
-      run: |
-        npm run build
-        npx next export
+    - name: Build
+      run: npm run build
       env:
         CI: false
 
