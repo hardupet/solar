@@ -88,7 +88,13 @@ const config: Config = {
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out'
-  		}
+  		},
+  		fontFamily: {
+  			'life': ['var(--font-life-of-apple)', 'sans-serif'],
+			'gontserrat': ['var(--font-gontserrat-black)', 'sans-serif'],
+  			'think-music': ['var(--font-think-music)', 'sans-serif'],
+			'kode-mono': ['var(--font-kode-mono-regular)', 'sans-serif'],
+  		},
   	}
   },
   plugins: [require("tailwindcss-animate")],
