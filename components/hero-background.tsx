@@ -28,7 +28,7 @@ export function HeroBackground() {
           className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/50 to-transparent">
-          <h1 className="font-life text-4xl h-full flex items-center justify-center">Your Text Here</h1>
+          {/* <h1 className="font-life text-4xl h-full flex items-center justify-center">Solar Energy Insights Platform</h1> */}
         </div>
       </div>
     </div>
