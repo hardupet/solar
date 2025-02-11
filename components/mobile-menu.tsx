@@ -35,7 +35,7 @@ export function MobileMenu() {
             <Button className="w-full">Sign up</Button>
           </div>
           <div className="mt-4">
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
           </div>
         </nav>
       </SheetContent>

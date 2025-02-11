@@ -27,24 +27,28 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 229 84% 5%;
     --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
+    
+    --gradient-start: 232 47% 15%;
+    --gradient-end: 229 84% 5%;
+    
+    --card: 229 84% 5%;
     --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
+    --popover: 229 84% 5%;
     --popover-foreground: 210 40% 98%;
     --primary: 24 96% 53%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 232 47% 15%;
     --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
+    --muted: 232 47% 15%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 232 47% 15%;
     --accent-foreground: 210 40% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
+    --border: 232 47% 15%;
+    --input: 232 47% 15%;
     --ring: 24 96% 53%;
   }
 }
@@ -56,6 +60,17 @@
   to {
     transform: scale(1);
   }
+}
+
+@keyframes typing {
+  0% { opacity: 0 }
+  50% { opacity: 1 }
+  100% { opacity: 0 }
+}
+
+.animate-typing > span {
+  animation: typing 1.5s infinite;
+  animation-delay: calc(var(--index) * 0.1s);
 }
 
 .animate-hero-zoom {
@@ -73,4 +88,12 @@
   src: url('/fonts/AlexType-Regular.woff2') format('woff2');
   font-display: swap;
 } */
+
+.dark body {
+  background: linear-gradient(
+    to bottom right,
+    hsl(var(--gradient-start)),
+    hsl(var(--gradient-end))
+  );
+}
 
