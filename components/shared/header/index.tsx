@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "@/components/theme-toggle"
+import { ThemeToggle } from "@/components/shared/header/theme-toggle"
 import { MobileMenu } from "@/components/mobile-menu"
 
 export function Header() {
