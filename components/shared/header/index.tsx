@@ -117,7 +117,7 @@ export function Header() {
                       </Button>
                     </HoverCardTrigger>
                     <HoverCardContent 
-                      className="w-56 bg-white dark:bg-gray-900 p-2"
+                      className="w-56 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-950 p-2 border border-gray-100 dark:border-gray-800 shadow-lg"
                       align="center"
                       sideOffset={8}
                     >
@@ -130,10 +130,12 @@ export function Header() {
                         >
                           <Button 
                             variant="ghost"
-                            className="flex w-full items-center gap-2 cursor-pointer p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md font-kode-mono text-sm"
+                            className="flex w-full items-center gap-2 cursor-pointer p-2 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 dark:hover:from-blue-900/20 dark:hover:to-indigo-900/20 rounded-md font-kode-mono text-sm group"
                           >
-                            <dropdownItem.icon className="h-4 w-4" />
-                            {dropdownItem.text}
+                            <dropdownItem.icon className="h-4 w-4 text-blue-500 dark:text-blue-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400" />
+                            <span className="group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                              {dropdownItem.text}
+                            </span>
                           </Button>
                         </motion.div>
                       ))}
