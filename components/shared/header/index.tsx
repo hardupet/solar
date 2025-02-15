@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/shared/header/theme-toggle"
 import { MobileMenu } from "@/components/shared/header/mobile-menu"
 import { motion } from "framer-motion"
+import Link from "next/link"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -25,7 +26,7 @@ import {
   CloudSun,
   Gauge,
   Lightbulb,
-  Users
+  Users,
 } from "lucide-react"
 import {
   HoverCard,
@@ -35,10 +36,10 @@ import {
 
 export function Header() {
   const navItems = [
-    { 
-      text: "Home",
-      dropdownItems: [] // no dropdown for home
-    },
+    // { 
+    //   text: "Home",
+    //   dropdownItems: [] // no dropdown for home
+    // },
     { 
       text: "Solutions",
       dropdownItems: [
@@ -85,9 +86,11 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b">
       <div className="container flex h-16 items-center justify-between">
+        <Link href="/">
         <div className="flex items-center space-x-2">
           <span className="font-bold text-xl font-kode-mono">Alpha One Solutions</span>
         </div>
+        </Link>
         <nav className="hidden md:flex-1 md:flex md:justify-center">
           <div className="flex items-center space-x-8 font-kode-mono">
             {navItems.map((item, i) => (
@@ -163,12 +166,14 @@ export function Header() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Button 
-              variant="ghost" 
-              className="text-base bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 hover:shadow-lg"
-            >
-              Log in
-            </Button>
+            <Link href="/auth/login">
+              <Button 
+                variant="ghost" 
+                className="text-base bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 hover:shadow-lg"
+              >
+                Log in
+              </Button>
+            </Link>
           </motion.div>
           
           <motion.div
@@ -178,11 +183,13 @@ export function Header() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <Button 
-              className="text-base bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 shadow-md hover:shadow-xl transition-all duration-200"
-            >
-              Register
-            </Button>
+            <Link href="/auth/register">
+              <Button 
+                className="text-base bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 shadow-md hover:shadow-xl transition-all duration-200"
+              >
+                Register
+              </Button>
+            </Link>
           </motion.div>
           <ThemeToggle />
         </div>
