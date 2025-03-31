@@ -1,28 +1,29 @@
-import { LogOut, MoveUpRight, Settings, CreditCard, FileText } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
+import { LogOut, MoveUpRight, Settings, CreditCard, FileText } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface MenuItem {
-  label: string
-  value?: string
-  href: string
-  icon?: React.ReactNode
-  external?: boolean
+  label: string;
+  value?: string;
+  href: string;
+  icon?: React.ReactNode;
+  external?: boolean;
 }
 
 interface Profile01Props {
-  name: string
-  role: string
-  avatar: string
-  subscription?: string
+  name: string;
+  role: string;
+  avatar: string;
+  subscription?: string;
 }
 
 const defaultProfile = {
-  name: "Eugene An",
-  role: "Prompt Engineer",
-  avatar: "https://ferf1mheo22r9ira.public.blob.vercel-storage.com/avatar-02-albo9B0tWOSLXCVZh9rX9KFxXIVWMr.png",
-  subscription: "Free Trial",
-} satisfies Required<Profile01Props>
+  name: 'Eugene An',
+  role: 'Prompt Engineer',
+  avatar:
+    'https://ferf1mheo22r9ira.public.blob.vercel-storage.com/avatar-02-albo9B0tWOSLXCVZh9rX9KFxXIVWMr.png',
+  subscription: 'Free Trial',
+} satisfies Required<Profile01Props>;
 
 export default function Profile01({
   name = defaultProfile.name,
@@ -32,24 +33,24 @@ export default function Profile01({
 }: Partial<Profile01Props> = defaultProfile) {
   const menuItems: MenuItem[] = [
     {
-      label: "Subscription",
+      label: 'Subscription',
       value: subscription,
-      href: "#",
+      href: '#',
       icon: <CreditCard className="w-4 h-4" />,
       external: false,
     },
     {
-      label: "Settings",
-      href: "#",
+      label: 'Settings',
+      href: '#',
       icon: <Settings className="w-4 h-4" />,
     },
     {
-      label: "Terms & Policies",
-      href: "#",
+      label: 'Terms & Policies',
+      href: '#',
       icon: <FileText className="w-4 h-4" />,
       external: true,
     },
-  ]
+  ];
 
   return (
     <div className="w-full max-w-sm mx-auto">
@@ -75,7 +76,7 @@ export default function Profile01({
           </div>
           <div className="h-px bg-zinc-200 dark:bg-zinc-800 my-6" />
           <div className="space-y-2">
-            {menuItems.map((item) => (
+            {menuItems.map(item => (
               <Link
                 key={item.label}
                 href={item.href}
@@ -85,10 +86,16 @@ export default function Profile01({
               >
                 <div className="flex items-center gap-2">
                   {item.icon}
-                  <span className="text-sm font-medium text-zinc-900 dark:text-zinc-100">{item.label}</span>
+                  <span className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                    {item.label}
+                  </span>
                 </div>
                 <div className="flex items-center">
-                  {item.value && <span className="text-sm text-zinc-500 dark:text-zinc-400 mr-2">{item.value}</span>}
+                  {item.value && (
+                    <span className="text-sm text-zinc-500 dark:text-zinc-400 mr-2">
+                      {item.value}
+                    </span>
+                  )}
                   {item.external && <MoveUpRight className="w-4 h-4" />}
                 </div>
               </Link>
@@ -109,6 +116,5 @@ export default function Profile01({
         </div>
       </div>
     </div>
-  )
+  );
 }
-

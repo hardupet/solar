@@ -1,11 +1,11 @@
-"use client"
+'use client';
 
-import { Menu } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Menu } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 // import { ThemeToggle } from "@/components/shared/header/theme-toggle"
-import { motion } from "framer-motion"
-import { 
+import { motion } from 'framer-motion';
+import {
   Sun,
   Wind,
   Leaf,
@@ -20,52 +20,52 @@ import {
   Gauge,
   Lightbulb,
   Users,
-  ChevronRight
-} from "lucide-react"
-import { useState } from "react"
+  ChevronRight,
+} from 'lucide-react';
+import { useState } from 'react';
 
 export function MobileMenu() {
-  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null)
+  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
 
   const menuItems = [
-    { 
-      text: "Home",
+    {
+      text: 'Home',
       icon: Home,
-      subItems: []
+      subItems: [],
     },
-    { 
-      text: "Solutions",
+    {
+      text: 'Solutions',
       icon: Sun,
       subItems: [
-        { text: "Solar Energy", icon: Sun },
-        { text: "Wind Power", icon: Wind },
-        { text: "Energy Storage", icon: Battery },
-        { text: "Smart Monitoring", icon: Gauge }
-      ]
+        { text: 'Solar Energy', icon: Sun },
+        { text: 'Wind Power', icon: Wind },
+        { text: 'Energy Storage', icon: Battery },
+        { text: 'Smart Monitoring', icon: Gauge },
+      ],
     },
-    { 
-      text: "Features",
+    {
+      text: 'Features',
       icon: LineChart,
       subItems: [
-        { text: "Energy Analytics", icon: LineChart },
-        { text: "Weather Forecasting", icon: CloudSun },
-        { text: "System Integration", icon: Settings },
-        { text: "Smart Grid", icon: Lightbulb },
-        { text: "Data Security", icon: Shield }
-      ]
+        { text: 'Energy Analytics', icon: LineChart },
+        { text: 'Weather Forecasting', icon: CloudSun },
+        { text: 'System Integration', icon: Settings },
+        { text: 'Smart Grid', icon: Lightbulb },
+        { text: 'Data Security', icon: Shield },
+      ],
     },
-    { 
-      text: "Use Cases",
+    {
+      text: 'Use Cases',
       icon: Building2,
       subItems: [
-        { text: "Residential", icon: Home },
-        { text: "Commercial", icon: Building2 },
-        { text: "Industrial", icon: Factory },
-        { text: "Community Solar", icon: Users },
-        { text: "Sustainability", icon: Leaf }
-      ]
+        { text: 'Residential', icon: Home },
+        { text: 'Commercial', icon: Building2 },
+        { text: 'Industrial', icon: Factory },
+        { text: 'Community Solar', icon: Users },
+        { text: 'Sustainability', icon: Leaf },
+      ],
     },
-  ]
+  ];
 
   const menuVariants = {
     hidden: { opacity: 0, x: 20 },
@@ -76,15 +76,15 @@ export function MobileMenu() {
         delay: i * 0.1,
       },
     }),
-  }
+  };
 
   const toggleSubmenu = (text: string) => {
     if (openSubmenu === text) {
-      setOpenSubmenu(null)
+      setOpenSubmenu(null);
     } else {
-      setOpenSubmenu(text)
+      setOpenSubmenu(text);
     }
-  }
+  };
 
   return (
     <Sheet>
@@ -94,8 +94,8 @@ export function MobileMenu() {
           <span className="sr-only">Toggle menu</span>
         </Button>
       </SheetTrigger>
-      <SheetContent 
-        side="right" 
+      <SheetContent
+        side="right"
         className="w-[300px] sm:w-[400px] bg-white dark:bg-gray-900 border-l dark:border-gray-800"
       >
         <nav className="flex flex-col gap-4 mt-8">
@@ -107,8 +107,8 @@ export function MobileMenu() {
               animate="visible"
               variants={menuVariants}
             >
-              <Button 
-                variant="ghost" 
+              <Button
+                variant="ghost"
                 className="w-full justify-between text-lg font-kode-mono flex items-center"
                 onClick={() => toggleSubmenu(item.text)}
               >
@@ -117,7 +117,7 @@ export function MobileMenu() {
                   {item.text}
                 </span>
                 {item.subItems.length > 0 && (
-                  <ChevronRight 
+                  <ChevronRight
                     className={`h-4 w-4 transition-transform duration-200 ${
                       openSubmenu === item.text ? 'rotate-90' : ''
                     }`}
@@ -125,10 +125,10 @@ export function MobileMenu() {
                 )}
               </Button>
               {item.subItems.length > 0 && openSubmenu === item.text && (
-                <motion.div 
+                <motion.div
                   className="ml-4 mt-2 space-y-1"
                   initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
+                  animate={{ opacity: 1, height: 'auto' }}
                   exit={{ opacity: 0, height: 0 }}
                 >
                   {item.subItems.map((subItem, j) => (
@@ -151,7 +151,7 @@ export function MobileMenu() {
               )}
             </motion.div>
           ))}
-          
+
           <div className="flex flex-col gap-2 mt-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -162,7 +162,7 @@ export function MobileMenu() {
                 Log in
               </Button>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -175,12 +175,9 @@ export function MobileMenu() {
               </Button>
             </motion.div>
           </div>
-          <div className="mt-4">
-            {/* <ThemeToggle /> */}
-          </div>
+          <div className="mt-4">{/* <ThemeToggle /> */}</div>
         </nav>
       </SheetContent>
     </Sheet>
-  )
+  );
 }
-

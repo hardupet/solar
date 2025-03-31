@@ -1,5 +1,5 @@
-import { Chrome, Apple, Database } from "lucide-react"
-import { ComputerIcon as Windows, LaptopIcon as Linux } from "lucide-react"
+import { Chrome, Apple, Database } from 'lucide-react';
+import { ComputerIcon as Windows, LaptopIcon as Linux } from 'lucide-react';
 
 export function Tools() {
   return (
@@ -13,5 +13,5 @@ export function Tools() {
         <Database className="h-12 w-12 text-gray-400" />
       </div>
     </section>
-  )
-} 
+  );
+}

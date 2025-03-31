@@ -1,5 +1,5 @@
-import { Card } from "@/components/ui/card"
-import { LineChart, Bell, BarChart3 } from "lucide-react"
+import { Card } from '@/components/ui/card';
+import { LineChart, Bell, BarChart3 } from 'lucide-react';
 
 export function Benefits() {
   return (
@@ -28,5 +28,5 @@ export function Benefits() {
         </Card>
       </div>
     </section>
-  )
-} 
+  );
+}

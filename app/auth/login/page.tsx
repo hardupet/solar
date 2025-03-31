@@ -1,6 +1,6 @@
-import { LoginForm } from "@/components/pages/auth/login-form"
-import { Header } from "@/components/shared/header/index"
-import { Footer } from "@/components/shared/footer/index"
+import { LoginForm } from '@/components/pages/auth/login-form';
+import { Header } from '@/components/shared/header/index';
+import { Footer } from '@/components/shared/footer/index';
 
 export default function LoginPage() {
   return (
@@ -18,5 +18,5 @@ export default function LoginPage() {
         <Footer />
       </div>
     </main>
-  )
-} 
+  );
+}

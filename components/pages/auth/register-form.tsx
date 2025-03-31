@@ -1,20 +1,22 @@
-"use client"
+'use client';
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { motion } from "framer-motion"
-import Link from "next/link"
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export function RegisterForm() {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       className="w-full max-w-md p-8 space-y-6 bg-white dark:bg-gray-900 rounded-2xl shadow-xl"
     >
       <div className="space-y-2 text-center">
         <h1 className="text-3xl font-bold font-kode-mono">Create Account</h1>
-        <p className="text-gray-500 dark:text-gray-400">Enter your details to create your account</p>
+        <p className="text-gray-500 dark:text-gray-400">
+          Enter your details to create your account
+        </p>
       </div>
       <div className="space-y-4">
         <div className="space-y-2">
@@ -37,5 +39,5 @@ export function RegisterForm() {
         </Link>
       </div>
     </motion.div>
-  )
-} 
+  );
+}

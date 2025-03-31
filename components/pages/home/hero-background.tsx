@@ -1,21 +1,21 @@
-"use client"
+'use client';
 
-import { useEffect, useRef } from "react"
-import Image from "next/image"
+import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 export function HeroBackground() {
-  const containerRef = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!containerRef.current) return
-      const scrolled = window.scrollY
-      containerRef.current.style.transform = `translateY(${scrolled * 0.5}px)`
-    }
+      if (!containerRef.current) return;
+      const scrolled = window.scrollY;
+      containerRef.current.style.transform = `translateY(${scrolled * 0.5}px)`;
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div className="absolute inset-0 -z-10 overflow-hidden">
@@ -32,6 +32,5 @@ export function HeroBackground() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-

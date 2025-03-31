@@ -1,9 +1,9 @@
-"use client"
+'use client';
 
-import { Menu } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { ThemeToggle } from "@/components/shared/header/theme-toggle"
+import { Menu } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { ThemeToggle } from '@/components/shared/header/theme-toggle';
 
 export function MobileMenu() {
   return (
@@ -34,12 +34,9 @@ export function MobileMenu() {
             </Button>
             <Button className="w-full">Sign up</Button>
           </div>
-          <div className="mt-4">
-            {/* <ThemeToggle /> */}
-          </div>
+          <div className="mt-4">{/* <ThemeToggle /> */}</div>
         </nav>
       </SheetContent>
     </Sheet>
-  )
+  );
 }
-

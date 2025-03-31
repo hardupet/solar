@@ -1,6 +1,6 @@
 // import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Star, LightbulbIcon } from "lucide-react";
+import { Button } from '@/components/ui/button';
+import { ArrowRight, Star, LightbulbIcon } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -9,15 +9,19 @@ const Hero = () => {
         <div className="space-y-8">
           <div className="flex items-center gap-2 bg-mint/10 w-fit px-4 py-2 rounded-full border border-mint/20">
             <Star className="w-4 h-4 text-mint" />
-            <span className="text-mint text-sm font-medium font-kode-mono">AI-Powered Renewable Energy Insights</span>
+            <span className="text-mint text-sm font-medium font-kode-mono">
+              AI-Powered Renewable Energy Insights
+            </span>
           </div>
           <h1 className="text-5xl md:text-7xl font-bold leading-tight text-foreground font-kode-mono">
-            S<span className="inline-flex items-center">
+            S
+            <span className="inline-flex items-center">
               <LightbulbIcon className="w-12 h-12 md:w-16 md:h-16 text-foreground fill-foreground" />
-            </span>lar Energy
+            </span>
+            lar Energy
             <br />
             <span className="animate-typing flex">
-              {"Insights".split('').map((letter, i) => (
+              {'Insights'.split('').map((letter, i) => (
                 <span key={i} style={{ '--index': i } as any}>
                   {letter}
                 </span>
@@ -33,7 +37,10 @@ const Hero = () => {
             <Button className="bg-mint hover:bg-mint/90 text-forest font-medium px-8 py-6 text-lg font-kode-mono">
               Register <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button variant="outline" className="border-mint/20 text-mint hover:bg-mint/10 font-kode-mono">
+            <Button
+              variant="outline"
+              className="border-mint/20 text-mint hover:bg-mint/10 font-kode-mono"
+            >
               Watch Demo
             </Button>
           </div>

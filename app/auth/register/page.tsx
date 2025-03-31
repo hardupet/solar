@@ -1,6 +1,6 @@
-import { RegisterForm } from "@/components/pages/auth/register-form"
-import { Header } from "@/components/shared/header/index"
-import { Footer } from "@/components/shared/footer/index"
+import { RegisterForm } from '@/components/pages/auth/register-form';
+import { Header } from '@/components/shared/header/index';
+import { Footer } from '@/components/shared/footer/index';
 
 export default function RegisterPage() {
   return (
@@ -18,5 +18,5 @@ export default function RegisterPage() {
         <Footer />
       </div>
     </main>
-  )
-} 
+  );
+}
